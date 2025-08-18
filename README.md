@@ -1,5 +1,9 @@
 ## GNC Software Onboarding
 
+Welcome to the GNC Software Onboarding exercises.
+Exercise one is available in the exercise_1 folder. Prior to starting, check out the installation and
+software setup instructions below!
+
 ### Setup Instructions
 Start by installing GCC using the os-specific instructions below. Then follow along with the general development setup instructions at the bottom.
 
