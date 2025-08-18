@@ -29,7 +29,7 @@ Note that different linux distros may use different package managers.
 1. Install git from <https://git-scm.com/downloads>
 2. Install VSCode from <https://code.visualstudio.com/download>
 3. Open VSCode, navigate to the extensions tab (the 4 boxes on the left hand navigation bar), and search for C/C++. Install this extension (it should be from Microsoft).
-4. Open a new VSCode project in new folder and clone the repository by running `git clone ...`
+4. Open a new VSCode project in new folder and clone the repository by running `git clone https://github.gatech.edu/gnc/software-onboarding.git`
 
 
 
