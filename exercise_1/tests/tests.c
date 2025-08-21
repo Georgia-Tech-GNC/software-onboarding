@@ -7,7 +7,7 @@ _Static_assert(MAX_NAME_LEN == 20,
 );
 
 void clear_name(char* name) {
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 21; i++) {
         name[i] = '\0';
     }
 }
@@ -23,32 +23,32 @@ MU_TEST(check_null_name) {
 	mu_check(initialize_student(&s, NULL, 12, 12) == false);
     mu_assert_int_eq(s.age, 2);
     mu_assert_int_eq(s.grade, 2);
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 21; i++) {
         mu_check(s.name[i] == '\0');
     }
 }
 
 MU_TEST(check_oversized_name) {
-    char* name = "Not Not Harry Potter";  
+    char* name = "Neville F. Longbottom";  
     struct Student s = {.age = 2, .grade = 2};
     clear_name(s.name);
 	mu_check(initialize_student(&s, name, 12, 12) == false);
     mu_assert_int_eq(s.age, 2);
     mu_assert_int_eq(s.grade, 2);
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 21; i++) {
         mu_check(s.name[i] == '\0');
     }
 }
 
 MU_TEST(check_20char_name) {
-    char* name = "Fee Fi Fo Fum Fa Fy";    
+    char* name = "Fee Fi Fo Fum Far Fy";    
     struct Student s = {.age = 0, .grade = 0};
     clear_name(s.name);
 
 	mu_check(initialize_student(&s, name, 12, 10) == true);
     mu_assert_int_eq(s.age, 12);
     mu_assert_int_eq(s.grade, 10);
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 21; i++) {
         mu_check(name[i] == s.name[i]);
     }
 }
@@ -62,7 +62,7 @@ MU_TEST(check_empty_name) {
 	mu_check(initialize_student(&s, name, 3, 4) == true);
     mu_assert_int_eq(s.age, 3);
     mu_assert_int_eq(s.grade, 4);
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 21; i++) {
         mu_check(s.name[i] == '\0');
     }
 }
@@ -78,7 +78,7 @@ MU_TEST(normal_init_student) {
     for (int i = 0; i < 14; i++) {
         mu_check(name[i] == s.name[i]);
     }
-    for (int i = 14; i < 20; i++) {
+    for (int i = 14; i < 21; i++) {
         mu_check(s.name[i] == '\0');
     }
 }

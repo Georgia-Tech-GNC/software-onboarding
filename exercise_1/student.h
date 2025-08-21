@@ -27,14 +27,18 @@
  * A simple struct reprenting a student.
  * Each student has a name, age, and grade.
  * 
- * Note that the name is stored as an array of MAX_NAME_LEN characters. 
+ * Note that the name is stored as an array of MAX_NAME_LEN + 1 characters. 
  * This is because C needs to know the size of a struct in advance if we
  * want to avoid having to use malloc and free.
+ * 
  * If the student's name is less than MAX_NAME_LEN, the remaining characters in 
  * the array will simply be left uninitialized.
+ * 
+ * We add one to MAX_NAME_LEN in order to account for the null terminator charactor '\0',
+ * which every string must end with.
  */
 struct Student {
-    char name[MAX_NAME_LEN];
+    char name[MAX_NAME_LEN + 1];
     uint8_t age;
     uint8_t grade;
 };
@@ -49,7 +53,7 @@ struct Student {
  * @param age       the age of the student    
  * @param grade     the grade of the student.
  * 
- * If the length of the name (including the null terminator) is bigger 
+ * If the length of the name (not including the null terminator) is bigger 
  * than MAX_NAME_LEN, you should return false and do nothing.
  * 
  * If either student or name are NULL, you should
@@ -77,6 +81,8 @@ struct Student {
  *  - To set properties of a pointer, use the arrow syntax. For example, 
  *      student->age will get/set the age, student->name will get/set the name, 
  *      and so on.
+ * 
+ *  - When copying the name, don't forget to copy the null terminator as well.
  */
 bool initialize_student(
     struct Student* student, 

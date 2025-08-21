@@ -2,13 +2,10 @@
 // that we defined there.
 #include "student.h"
 
-bool initialize_student(
-    struct Student* student, 
-    const char* name, 
-    size_t name_len, 
-    uint8_t age, 
-    uint8_t grade
-) {
+// "Importing" stdio let's us use printf, which is helpful for debugging.
+#include "stdio.h"
+
+bool initialize_student(struct Student* student, const char* name, uint8_t age, uint8_t grade) {
    // Implement this method! You can see the detailed documentation in students.h
 }
 
@@ -21,5 +18,7 @@ uint8_t get_oldest_student(const struct Student* students, size_t num_students) 
  */
 // int main(void) {
 //      struct Student s;
-//      initialize_student(&s, )
+//      initialize_student(&s, "bob", 5, 7);
+//      
+//      printf("Name: %s \tAge: %d \tGrade: %d", s.name, s.age, s.grade);
 // }
