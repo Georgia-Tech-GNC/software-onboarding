@@ -20,7 +20,6 @@ bool initialize_student(struct Student* student, const char* name, uint8_t age, 
 uint8_t get_oldest_student(const struct Student* students, size_t num_students) {
    // Implement this method! You can see the detailed documentation in students.h
    int oldestStudent = 0;
-   num_students = num_students;
     for(size_t i = 0; i < num_students; i++) {
         if(students[i].age > oldestStudent) {
             oldestStudent = students[i].age;
