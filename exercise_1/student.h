@@ -109,7 +109,7 @@ bool initialize_student(
  */
 uint8_t get_oldest_student(const struct Student* students, size_t num_students);
 
-
+void clear_name(char* name);
 
 
 // This line is the end of the header guard

@@ -141,6 +141,7 @@ MU_TEST_SUITE(test_get_oldest_student) {
     MU_RUN_TEST(oldest_with_repeats);
 }
 
+
 int main(void) {
 	MU_RUN_SUITE(test_init_student);
     MU_RUN_SUITE(test_get_oldest_student);
