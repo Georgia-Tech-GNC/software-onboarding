@@ -10,7 +10,7 @@ bool initialize_student(struct Student* student, const char* name, uint8_t age, 
       return false;
    }
 
-   memcpy(student->name, name, sizeof(char) * strlen(name) + 1);
+   memcpy(student->name, name, sizeof(char) * (strlen(name) + 1));
    student->age = age;
    student->grade = grade;
    return true;
