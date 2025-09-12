@@ -10,7 +10,12 @@ bool initialize_student(struct Student* student, const char* name, uint8_t age, 
         return false;
     }
 
-    memcpy(student->name, name, (strlen(name))*sizeof(char));
+     // Clear the whole buffer
+    memset(student->name, '\0', sizeof(student->name));
+
+    // Copy safely, including the '\0'
+    strncpy(student->name, name, MAX_NAME_LEN);
+    
     student->age = age;
     student->grade = grade;
     return true;
@@ -30,10 +35,11 @@ uint8_t get_oldest_student(const struct Student* students, size_t num_students) 
 
 
 
-
+/*
 int main(void) {
       struct Student s;
       initialize_student(&s, "bob", 5, 7);
       
       printf("Name: %s \tAge: %d \tGrade: %d", s.name, s.age, s.grade);
  }
+*/   
