@@ -10,11 +10,7 @@ bool initialize_student(struct Student* student, const char* name, uint8_t age, 
         return false;
     }
 
-     // Clear the whole buffer
-    memset(student->name, '\0', sizeof(student->name));
-
-    // Copy safely, including the '\0'
-    strncpy(student->name, name, MAX_NAME_LEN);
+   memcpy(student->name, name, strlen(name)*sizeof(char) + 1);
     
     student->age = age;
     student->grade = grade;
