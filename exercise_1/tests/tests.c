@@ -1,6 +1,8 @@
 #include "minunit.h"
 #include "student.h"
 
+void clear_name(char* name);
+
 _Static_assert(MAX_NAME_LEN == 20, 
     "If this assertion fails, something is wrong with your setup!" 
     "Make sure you set MAX_NAME_LEN in students.h to 20 when running the tests."
