@@ -9,7 +9,7 @@ bool initialize_student(struct Student* student, const char* name, uint8_t age, 
    if (student == NULL || name == NULL || strlen(name) > MAX_NAME_LEN) {
       return false;
    }
-   memcpy(student->name, name, strlen(name) + 1);
+   memcpy(student->name, name, (strlen(name) + 1) * sizeof(char));
    student->age = age;
    student->grade = grade;
    return true;
