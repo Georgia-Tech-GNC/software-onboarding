@@ -1,12 +1,16 @@
 # Conceptual Questions
 
 1. What is an operating system? Can you give some responsibilities of an operating system? 
+OS = level between hardware + UI, handles background processes and everything else that the user doesn't need to care about
 
 2. How does the scheduling (execution of tasks) differ between real-time operating systems 
 and regular operating systems?  
+Regular OS: Timing doesn't matter too much
+RTOS: Very strict/precise timing
 
 3. Identify and explain two ways in which we can share data between tasks.  
-
+Mutex: Multiple tasks read and write to the same memory, but only one at a time
+Stream buffer: One task sends data (one-way) to another task
 ---
 
 # Design Exercise
@@ -49,3 +53,6 @@ You do not need to provide any C code or even pseudocode. This exercise is meant
 ## Your Answer
 
 Write your answer here
+ - Stream buffer that sends sensor data to communication module
+ - Notifications that sends button signals to sensors
+ - Notifications that sends communication task to LED
