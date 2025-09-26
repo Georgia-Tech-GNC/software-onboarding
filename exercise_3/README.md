@@ -1,12 +1,17 @@
 # Conceptual Questions
 
 1. What is an operating system? Can you give some responsibilities of an operating system? 
+An operating system is software that acts as an abstraction from the hardware for user programs.
+An operating system is responsible for memory managment, scheduling, and direct hardware interaction.
 
 2. How does the scheduling (execution of tasks) differ between real-time operating systems 
-and regular operating systems?  
+and regular operating systems?
+Scheduling on a regular operating system is designed to provide a good user experience without worrying too much about precise timing.
+RTOS' are designed to respond quickly to real time events, meaning that they are much more particular about the timings for switching between tasks.
 
 3. Identify and explain two ways in which we can share data between tasks.  
-
+A stream buffer, which sends a "stream" of data directly from one task to another.
+A notification, which sends a signal from one task to another.
 ---
 
 # Design Exercise
@@ -47,5 +52,6 @@ You do not need to provide any C code or even pseudocode. This exercise is meant
 ---
 
 ## Your Answer
-
-Write your answer here
+Stream buffer from the Sensor Task to the Communication Task
+Notification from the Button ISR to Sensor Task
+Notification from the Communication Task to the LED Task that the data was successfully sent
