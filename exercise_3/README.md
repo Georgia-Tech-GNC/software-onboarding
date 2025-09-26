@@ -57,6 +57,7 @@ You do not need to provide any C code or even pseudocode. This exercise is meant
 
 - Sensor Task:
     - Receives notification from RTOS to begin reading periodically
+    - Receives sensor data through a streamed buffer
     - Shares sensor data through a mutex to the communication task
 
 - Communication Task:
@@ -67,7 +68,7 @@ You do not need to provide any C code or even pseudocode. This exercise is meant
 
 - LED/Button Task:
     - Receives notification from RTOS to wait for user input
-    - Transmits to Sensor task through a streamed buffer to collect measurements immediately
+    - Transmits to Sensor task through a mutex to let it know to collect measurements immediately
         - This should overwrite the command issued by the RTOS and be called when the button is pressed
     - Transmits to Communication task through a streamed buffer to share that the button was pressed and the next communication from the sensor task will be an immediate reading
     - Receives confirmation of data collection from Communication task through a mutex, turning on the LED
