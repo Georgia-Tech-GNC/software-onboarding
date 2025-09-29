@@ -1,7 +1,7 @@
 # Conceptual Questions
 
 1. What is an operating system? Can you give some responsibilities of an operating system? 
-OS = level between hardware + UI, handles background processes and everything else that the user doesn't need to care about
+OS = level between hardware + UI, handles things such as scheduling CPU time to different applications, allocating memory to programs, and sending peripheral device inputs like the keyboard and mouse.
 
 2. How does the scheduling (execution of tasks) differ between real-time operating systems 
 and regular operating systems?  
@@ -53,6 +53,21 @@ You do not need to provide any C code or even pseudocode. This exercise is meant
 ## Your Answer
 
 Write your answer here
- - Stream buffer that sends sensor data to communication module
- - Notifications that sends button signals to sensors
- - Notifications that sends communication task to LED
+- Sensor Task:
+   - Reads temperature, humidity, and wind speed sensors every X seconds
+   - Immediately sends data through button interrupt
+   - Sends data to Communication Task through a stream buffer
+- Communication Task:
+   - Sends sensor data over UART
+   - Uses a notification to notify LED task of successful transmission 
+- LED Task:
+   - Blinks upon recieving notifaction from Communication Task 
+
+Communication components:
+- Stream buffer
+    - Source: Sensor Task
+    - Destination: Communication Task
+- Notification
+    - Source: Communication Task
+    - Destination: LED Task
+    
