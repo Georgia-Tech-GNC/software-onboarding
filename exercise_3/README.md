@@ -56,24 +56,15 @@ You do not need to provide any C code or even pseudocode. This exercise is meant
 ## Your Answer
 
 - Sensor Task:
-    - Receives notification from RTOS to begin reading periodically
-    - Receives sensor data through a streamed buffer
-    - Shares sensor data through a mutex to the communication task
+    - Shares data with the communication task through a streamed buffer
+    - Waits on notification from the button ISR for an immediate read within a certain timeout (otherwise do regular read)
 
 - Communication Task:
     - Receives notification from sensor task to begin transmitting data to the UART module
-    - Receives notification from UART module when data is successfully transmitted 
-    - Transmits data to the UART module through a streamed buffer
-    - Transmits confirmation to LED task through a mutex after data is sent successfully to UART module from an immediate reading 
+    - Receives sensor data from the sensor task through a streamed buffer
+    - Transmits confirmation to LED task through a notification after data is sent successfully to UART module from an immediate reading 
 
 - LED/Button Task:
-    - Receives notification from RTOS to wait for user input
-    - Transmits to Sensor task through a mutex to let it know to collect measurements immediately
-        - This should overwrite the command issued by the RTOS and be called when the button is pressed
+    - Transmits to Sensor task through a notification to let it know to collect measurements immediately when the button is pressed
     - Transmits to Communication task through a streamed buffer to share that the button was pressed and the next communication from the sensor task will be an immediate reading
-    - Receives confirmation of data collection from Communication task through a mutex, turning on the LED
-    - Receives command from RTOS when next period occurs for sensor data collection to turn off LED through a mutex
-
-- Mutexes:
-    - The sensor values (does not need to be a mutex but there may be future expansions that may require this to become a shared resource)
-    - The LED state
+    - Receives confirmation of data collection from Communication task through a notification, blinking the LED
