@@ -66,5 +66,5 @@ You do not need to provide any C code or even pseudocode. This exercise is meant
 
 - LED/Button Task:
     - Transmits to Sensor task through a notification to let it know to collect measurements immediately when the button is pressed
-    - Transmits to Communication task through a streamed buffer to share that the button was pressed and the next communication from the sensor task will be an immediate reading
+    - Transmits a notification to Communication task to share that the button was pressed and the next communication from the sensor task will be an immediate reading
     - Receives confirmation of data collection from Communication task through a notification, blinking the LED
