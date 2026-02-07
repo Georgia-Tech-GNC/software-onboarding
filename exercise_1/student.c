@@ -7,7 +7,9 @@
 
 bool initialize_student(struct Student* student, const char* name, uint8_t age, uint8_t grade) {
    // Implement this method! You can see the detailed documentation in students.h
-}
+   
+
+}  
 
 uint8_t get_oldest_student(const struct Student* students, size_t num_students) {
    // Implement this method! You can see the detailed documentation in students.h
