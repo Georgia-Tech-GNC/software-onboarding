@@ -8,11 +8,45 @@
 bool initialize_student(struct Student* student, const char* name, uint8_t age, uint8_t grade) {
    // Implement this method! You can see the detailed documentation in students.h
    
+   // check for null pointers 
+   if (student == NULL || name == NULL) {
+      return false;
+   }
+   // check if name is too long
+   size_t name_len = strlen(name);
+   if (name_len > MAX_NAME_LEN){
+      return false;
+   }
 
-}  
+   // copy the name 
+   memcpy(student->name,name, (name_len + 1) * sizeof(char));
+   
+
+   // set age and grade
+   student->age = age;
+   student->grade = grade;
+
+   return true;
+   
+}
 
 uint8_t get_oldest_student(const struct Student* students, size_t num_students) {
    // Implement this method! You can see the detailed documentation in students.h
+   
+   // check if no students
+   if (num_students == 0 || students == NULL) {
+      return 0;
+   }
+
+   uint8_t max_age = students[0].age;
+
+   for (size_t i = 0; i < num_students; i ++){
+      if (students[i].age > max_age) {
+         max_age = students[i].age;
+         
+      }
+   }
+return max_age;
 }
 
 /** You can uncomment this main method and use it to help debug your code.
