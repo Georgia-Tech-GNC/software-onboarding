@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CC: gcc-14
 
     steps:
     - name: Checkout repository
@@ -17,10 +19,10 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y gcc make cppcheck
+        sudo apt-get install -y gcc-14 make cppcheck
 
     - name: Build project
-      run: cd exercise_1 && make
+      run: cd exercise_1 && make CC=gcc-14
 
     - name: Run cppcheck
       run: |

@@ -6,7 +6,7 @@ _Static_assert(MAX_NAME_LEN == 20,
     "Make sure you set MAX_NAME_LEN in students.h to 20 when running the tests."
 );
 
-void clear_name(char* name) {
+static void clear_name(char* name) {
     for (int i = 0; i < 21; i++) {
         name[i] = '\0';
     }

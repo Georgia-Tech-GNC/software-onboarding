@@ -1,4 +1,4 @@
-CC := gcc
+CC ?= gcc
 CFLAGS := -std=c23 -Wall -Wpedantic -Wextra -Werror -Wstrict-prototypes -Wmissing-declarations
 CFLAGS += -Wold-style-definition -Werror=vla -fsanitize=address
 
