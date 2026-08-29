@@ -1,5 +1,5 @@
-CC := gcc
-CFLAGS := -Wall -pedantic -Wextra -Werror -Wstrict-prototypes -Wmissing-declarations
+CC ?= gcc
+CFLAGS := -std=c23 -Wall -Wpedantic -Wextra -Werror -Wstrict-prototypes -Wmissing-declarations
 CFLAGS += -Wold-style-definition -Werror=vla -fsanitize=address
 
 SRC = student.c tests/tests.c
