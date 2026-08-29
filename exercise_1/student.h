@@ -11,9 +11,6 @@
 // "Importing" stdint.h allows us to use types like uint8_t (an 8 bit unsigned integer).
 #include "stdint.h"
 
-// "Importing" stdbool.h allows us to use boolean types
-#include "stdbool.h"
-
 // "Importing" stddef.h allows us to use the size_t type, which is guaranteed to 
 // fit any valid size (in number of bytes) in memory. The size_t type is also
 // guaranteed to always be positive.

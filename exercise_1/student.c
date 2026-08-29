@@ -6,11 +6,19 @@
 #include "stdio.h"
 
 bool initialize_student(struct Student* student, const char* name, uint8_t age, uint8_t grade) {
-   return true;
+    memcpy(student->name, name, 20);
+    student->age = age;
+    student->grade = grade;
+   
+    return true;
 }
 
 uint8_t get_oldest_student(const struct Student* students, size_t num_students) {
-   return 0;
+   int mx = 0;
+   for (size_t i = 0; i < num_students; i++) {
+    if (mx < students[i].age) mx = students[i].age;
+   }
+   return mx;
 }
 
 /** You can uncomment this main method and use it to help debug your code.
