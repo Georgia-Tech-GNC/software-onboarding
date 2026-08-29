@@ -2,3 +2,4 @@
 answer_key/
 *.out
 *.gch
+**/.DS_Store

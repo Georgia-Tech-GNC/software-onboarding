@@ -1,0 +1,34 @@
+name: Check CMake Build
+
+on:
+  push:
+    branches: ["main"]
+  pull_request: 
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc make cppcheck
+
+    - name: Build project
+      run: cd exercise_1 && make
+
+    - name: Run cppcheck
+      run: |
+       cppcheck \
+        exercise_1/student.c \
+        --enable=all \
+        --suppress=missingInclude \
+        --suppress=unmatchedSuppression \
+        --suppress=unusedFunction \
+        --suppress=checkersReport \
+        --error-exitcode=1 
