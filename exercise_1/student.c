@@ -6,24 +6,13 @@
 #include "stdio.h"
 
 bool initialize_student(struct Student* student, const char* name, uint8_t age, uint8_t grade) {
-   if (!student || !name || strlen(name) > MAX_NAME_LEN) {
-      return false;
-   }
-
-   memcpy(student->name, name, sizeof(char) * (strlen(name) + 1));
-   student->age = age;
-   student->grade = grade;
-   return true;
+    // Implement this method! You can see the detailed documentation in students.h
+    return true;
 }
 
 uint8_t get_oldest_student(const struct Student* students, size_t num_students) {
-   uint8_t max_age = 0;
-   for (size_t i = 0; i < num_students; i++) {
-      if (students[i].age > max_age) {
-         max_age = students[i].age;
-      }
-   }
-   return max_age;
+    // Implement this method! You can see the detailed documentation in students.h
+    return 0;
 }
 
 /** You can uncomment this main method and use it to help debug your code.
