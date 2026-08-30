@@ -20,6 +20,8 @@
 // dealing with strings.
 #include "string.h"
 
+#include "stdbool.h"
+
 /**
  * A simple struct reprenting a student.
  * Each student has a name, age, and grade.

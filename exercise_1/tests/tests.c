@@ -1,5 +1,5 @@
 #include "minunit.h"
-#include "student.h"
+#include "../student.h"
 
 _Static_assert(MAX_NAME_LEN == 20, 
     "If this assertion fails, something is wrong with your setup!" 
