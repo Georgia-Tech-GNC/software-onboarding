@@ -7,8 +7,8 @@
 
 #include "stdint.h"
 
-#include <stddef.h>
-#include <string.h>
+#include "stddef.h"
+#include "string.h"
 
 bool initialize_student(struct Student* student, const char* name, uint8_t age, uint8_t grade) {
    // Implement this method! You can see the detailed documentation in students.h
