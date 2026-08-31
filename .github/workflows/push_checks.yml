@@ -33,4 +33,5 @@ jobs:
         --suppress=unmatchedSuppression \
         --suppress=unusedFunction \
         --suppress=checkersReport \
+        --suppress=missingIncludeSystem \
         --error-exitcode=1 
