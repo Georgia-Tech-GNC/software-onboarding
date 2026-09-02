@@ -19,6 +19,7 @@
 // "Importing" string.h provides access to the memcpy function, which is useful for 
 // dealing with strings.
 #include "string.h"
+#include <stdbool.h>
 
 /**
  * A simple struct reprenting a student.
