@@ -19,6 +19,7 @@
 // "Importing" string.h provides access to the memcpy function, which is useful for 
 // dealing with strings.
 #include "string.h"
+#include "stdbool.h"
 
 /**
  * A simple struct reprenting a student.
@@ -45,9 +46,6 @@ struct Student {
  * The first method you should implement.
  * This method takes 4 parameters.
  * 
- * @param Student   the pointer to the student you should modify.
- * @param name      the name the student should have
- * @param age       the age of the student    
  * @param grade     the grade of the student.
  * 
  * If the length of the name (not including the null terminator) is bigger 
