@@ -4,13 +4,41 @@
 
 // "Importing" stdio let's us use printf, which is helpful for debugging.
 #include "stdio.h"
+#include <string.h>
 
 bool initialize_student(struct Student* student, const char* name, uint8_t age, uint8_t grade) {
    // Implement this method! You can see the detailed documentation in students.h
+   if (name == NULL) {
+      return false;
+   }
+
+   if (student == NULL) {
+      return false;
+   }
+
+   size_t length = strlen(name);
+   if (length >= sizeof(student->name)) {
+      return false;
+   }
+
+   for (size_t i = 0; i <= length; i++) {
+      student->name[i] = name[i];
+   }
+   student->age = age;
+   student->grade = grade;
+
+   return true;
 }
 
 uint8_t get_oldest_student(const struct Student* students, size_t num_students) {
    // Implement this method! You can see the detailed documentation in students.h
+   uint8_t oldest = 0;
+   for (size_t i = 0; i < num_students; i++) {
+      if (students[i].age > oldest) {
+         oldest = students[i].age;
+      }
+   }
+   return oldest;
 }
 
 /** You can uncomment this main method and use it to help debug your code.
